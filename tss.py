@@ -11,40 +11,39 @@ import math
 from sklearn.linear_model import LinearRegression
 import matplotlib.pyplot as plt
 import seaborn as sns
-data = pd.read_csv("C:/Users/user/Desktop/TSSdata.txt")  # Verimizi okuyalım
-x = data['Yil'] # Metrekareleri bir axis' e çekelim, panda nın özelliği.
+data = pd.read_csv("TSSdata.txt")  # Verimizi okuyalım
+x = data['Yil'] # 
 y = data['Pressure']
 z=sum(data['Pressure']/71)
 print(data)
-# Remove extra space in columns
+
 print(x)
 print(y)
-print(z) # Ne oluşturduğumuza bakmak önemli.
+print(z) 
 plt.xlabel('Yil')
 plt.ylabel('Pressure')
-plt.title('Fransada Yıllara Göre 500 MB Basınç-Mart') # Ne oluşturduğumuza 2 boyutlu grafikte bakalım.
-#Doğrumuzun denklemi y = m*a+b , Biz ise en uygun m ve b yi arıyoruz. m Eğim, b kesim noktası
+plt.title('Fransada Yıllara Göre 500 MB Basınç-Temmuz')
 regr = LinearRegression()
 regr.fit(data[['Yil']], data[['Pressure']])
 
 
 df = pd.read_csv("C:/Users/user/Desktop/TSSData2.txt")  # Verimizi okuyalım
-a = df['Yil'] # Metrekareleri bir axis' e çekelim, panda nın özelliği.
+a = df['Yil']
 b = df['Pressure']
-c=sum(df['Pressure']/71)
+c=sum(df['Pressure']/71) # TSS formülü
 print(df)
-# Remove extra space in columns
+
 print(a)
 print(b)
-print(c) # Ne oluşturduğumuza bakmak önemli.
+print(c) 
 plt.xlabel('')
 plt.ylabel('')
-plt.title('Türkiyede Yıllara Göre 500 MB Basınç-Nisan')
+plt.title('Türkiyede Yıllara Göre 500 MB Basınç-Temmuz')
 
 T=((y-z)-(b-c))/50
-plt.title('Türkiye Soğuk Salınımı-Mayıs')
-plt.scatter(x,T)
+plt.title('Türkiye Soğuk Salınımı-Temmuz')
+plt.scatter(x,T) #Grafiğe dökelim.
 plt.plot(x,T)
 pd.set_option('display.max_rows', 71)
-print(T)
+print(T) #Yazdıralım
 
