@@ -10,3 +10,16 @@ Longtitude: 25 to 45
 
 Aylık bazda veri çekmek için seasonal average'ı seçip first month of season ile second month of season'u aynı seçin.
 
+Txt dosyası(not defteri) oluşturup veriyi içine atın. Başına Yil, Pressure yazın. 
+Her satırdaki Yıl ile veri arasına , koyup kaydedin.
+
+Örnek:
+Yil,Pressure
+1948, 5609.070
+1949, 5584.030
+1950, 5632.249
+1951, 5558.734
+1952, 5625.468
+1953, 5639.993
+... , ...
+2018, 5680.194
